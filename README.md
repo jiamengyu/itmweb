@@ -20,6 +20,8 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ## Running end-to-end tests
 
+pre-e2e-step: ./node_modules/.bin/webdriver-manager update --ignore_ssl
+
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## Further help
