@@ -1,6 +1,9 @@
 {
   "name": "ITMercenaries Web Portal",
+  "description": "A Web Portal for IT consultants",
   "version": "0.0.1",
+  "keywords": [],
+  "author": "Jiameng Yu",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from './core';
+//import { UserService } from './core';
 
 @Component({
-  selector: 'itm-root',
+  selector: 'itm-portal',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class ITMWebComponent implements OnInit {
+/*
   constructor (
     private userService: UserService
   ) {};
-
+*/
   title = 'IT Consultant Portal';
 
   ngOnInit(){
-    this.userService.populate();
+//    this.userService.populate();
   }
 }
