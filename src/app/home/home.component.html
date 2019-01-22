@@ -4,4 +4,14 @@
       <h1 class="title">Home Page!</h1>
     </div>
   </div>
+  <div *ngIf="false"></div>
+  <div *ngIf="str == 'yes'">Hello!</div>
+  <div class="container" [ngSwitch]="myVar">
+      <div *ngSwitchCase="'A'">Var is A</div>
+      <div *ngSwitchCase="'B'">Var is B</div>
+      <div *ngSwitchDefault>Var is Something Else</div>
+  </div>
+  <div [ngStyle]="{ 'color':'white', 'background-color':'blue'}">
+      Uses fixed white text on blue background
+  </div>
 </section>
