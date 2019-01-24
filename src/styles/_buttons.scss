@@ -1,0 +1,19 @@
+@import 'config';
+
+.btn {
+  background-color: $color-theme;
+  padding: 12px;
+  color: #fff;
+}
+
+.btn.warning {
+  background-color: $color-warning;
+}
+
+.btn.error {
+  background-color: $color-error;
+}
+
+.btn.feature {
+  background-color: purple;
+}

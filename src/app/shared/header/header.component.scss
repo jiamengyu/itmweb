@@ -1,0 +1,6 @@
+@import '../../../styles/config';
+@import '../../../styles/_mixins';
+
+button {
+  @include btn-generator(red);
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'itm-portal',
@@ -12,7 +13,8 @@ export class ITMWebComponent implements OnInit {
   ) {};
 */
   title = 'IT Consultant Portal';
-
+  faCoffee = faCoffee;
+  
   ngOnInit(){
 //    this.userService.populate();
   }

@@ -1,0 +1,7 @@
+@import '../../../styles/config';
+@import '../../../styles/buttons';
+
+button {
+  @extend .btn;
+  background-color: blue;
+}
