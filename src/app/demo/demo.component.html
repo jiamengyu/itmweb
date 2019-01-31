@@ -1,0 +1,23 @@
+
+<div>
+  <p *ngIf="userName" class="welcome">
+    Welcome: {{ userName }}!
+  </p>
+  <button (click)="signIn()" class="ui button">Sign In</button>
+</div>
+
+<div class="ui raised segment">
+  <h2 class="ui header"> Demo Form: Job</h2>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)" class="ui form">
+    <div class="field">
+      <label for="jobInput">JOB: </label>
+      <input type="text" id="jobInput" placeholder="Job Specialty" [formControl]="myForm.controls.job" >
+    </div>
+    <div *ngIf="!myForm.controls.job.valid" class="ui error message">Job is invalid</div>
+    <div *ngIf="myForm.controls.job.hasError('required')" class="ui error message">Job is required</div>
+    <div *ngIf="myForm.controls.job.hasError('invalidJob')" class="ui error message">Job must begin with 123</div>
+    <button type="submit" class="ui button">Submit</button>
+  </form>
+</div>
+
+<div class="ui info message">This product is: {{myForm.controls.job.value}} </div>

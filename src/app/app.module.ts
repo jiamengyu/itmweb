@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -11,6 +13,14 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HighlightDirective } from './shared/directive/highlight.directive';
 import { HomeComponent } from './home/home.component';
+import { DemoComponent } from './demo/demo.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { LoginComponent } from './login/login.component';
+
+import { UserService } from './shared/services/user.service';
+import { Metric, AnalyticsImpl } from './shared/services/analytics.interface';
+import { AnalyticsService } from './shared/services/analytics.service';
 
 @NgModule({
   declarations: [
@@ -18,13 +28,37 @@ import { HomeComponent } from './home/home.component';
     HeaderComponent,
     FooterComponent,
     HighlightDirective,
-    HomeComponent
+    HomeComponent,
+    DemoComponent,
+    AboutComponent,
+    ContactComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    FontAwesomeModule
+    AppRoutingModule,
+    FontAwesomeModule,
+    FormsModule, 
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {provide: UserService, useClass: UserService},
+    {provide:'API_URL', useValue: 'https://www.itmercenaries.ca/api'},
+    {
+      provide: AnalyticsService,
+      deps: [HttpClient, 'API_URL'],
+      useFactory(http: HttpClient, apiUrl: string) {
+        const loggingImpl: AnalyticsImpl ={
+          recordEvent: (metric: Metric): void =>{
+            console.log('The metric is:', metric);
+            console.log('Sending to endpoint:', apiUrl );
+          }
+        };
+        return new AnalyticsService(loggingImpl);
+      }
+    }
+  ],
   bootstrap: [ITMWebComponent]
 })
 export class AppModule { 
