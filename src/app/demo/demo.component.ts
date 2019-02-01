@@ -1,4 +1,5 @@
 import { Component, OnInit, ReflectiveInjector } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { UserService } from '../shared/services/user.service';
 import { AnalyticsService } from '../shared/services/analytics.service';
@@ -12,7 +13,14 @@ export class DemoComponent implements OnInit {
   myForm: FormGroup;
   userName:string;
 
-  constructor(fb: FormBuilder, private userService: UserService, private analyticsService: AnalyticsService) {
+  data: Object;
+  loading: boolean;
+
+  constructor(fb: FormBuilder, 
+              private userService: UserService, 
+              private analyticsService: AnalyticsService, 
+              private http: HttpClient ) {
+
     this.myForm = fb.group({
       'job': ['', Validators.compose([ Validators.required, this.jobValidator ] )]
     });
@@ -49,4 +57,12 @@ export class DemoComponent implements OnInit {
     this.analyticsService.record({eventName:'signIn', scope: this.userName});
   }
 
+  makeRequest(): void {
+    this.loading= true;
+    this.http.get('http://jsonplaceholder.typicode.com/posts/1')
+             .subscribe( data => {
+               this.data = data;
+               this.loading = false;
+             });
+  }
 }

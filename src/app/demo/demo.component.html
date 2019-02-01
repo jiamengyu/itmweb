@@ -5,6 +5,12 @@
   </p>
   <button (click)="signIn()" class="ui button">Sign In</button>
 </div>
+<h2>Basic HttpClient Request</h2>
+<button type="button" (click)="makeRequest()">Make Request</button>
+
+<fa-icon *ngIf="loading" [icon]="['fas', 'spinner']" [spin]="true" size="lg"></fa-icon>
+
+<pre>{{ data | json}}</pre>
 
 <div class="ui raised segment">
   <h2 class="ui header"> Demo Form: Job</h2>

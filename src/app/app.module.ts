@@ -21,6 +21,8 @@ import { LoginComponent } from './login/login.component';
 import { UserService } from './shared/services/user.service';
 import { Metric, AnalyticsImpl } from './shared/services/analytics.interface';
 import { AnalyticsService } from './shared/services/analytics.service';
+import { AUTH_PROVIDERS } from './shared/services/auth.service';
+import { LoggedInGuard } from './shared/services/logged-in.guard';
 
 @NgModule({
   declarations: [
@@ -36,13 +38,15 @@ import { AnalyticsService } from './shared/services/analytics.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FontAwesomeModule,
     FormsModule, 
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [
+    AUTH_PROVIDERS,
+    LoggedInGuard,
     {provide: UserService, useClass: UserService},
     {provide:'API_URL', useValue: 'https://www.itmercenaries.ca/api'},
     {
