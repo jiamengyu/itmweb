@@ -7,7 +7,8 @@ import {faCoffee } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./app.component.scss']
 })
 export class ITMWebComponent implements OnInit {
-/*
+
+  /*
   constructor (
     private userService: UserService
   ) {};

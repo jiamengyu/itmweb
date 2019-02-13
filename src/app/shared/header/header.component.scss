@@ -1,6 +1,15 @@
 @import '../../../styles/config';
 @import '../../../styles/_mixins';
 
+
+.itm-header {
+  background: #fff;
+  height: 200px;
+  position: fixed;
+  z-index: 150;
+  transition: all .25s ease-out;
+}
+
 button {
   @include btn-generator(red);
 }

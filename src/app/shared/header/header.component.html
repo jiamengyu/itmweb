@@ -1,17 +1,15 @@
-<nav class="navbar" id="navbar">
+<div class="itm-header">
+  <nav class="navbar" id="navbar">
+    <!-- logo -->
+    <div class="navbar-brand">
+      <a class="navbar-item">
+        <img src="assets/img/itm-logo.png" height="30" width="30" >
+      </a>
+    </div>
+  </nav>
 
-  <!-- logo -->
-  <div class="navbar-brand">
-    <a class="navbar-item">
-      <img src="assets/img/itm-logo.png" height="30" width="30" >
-    </a>
+  <div style="text-align:center" [ngClass]="{'mat-elevation-z5' : true, 'sticky' : isSticky}">
+      Welcome to {{ title }}!
   </div>
-</nav>
-
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+  <h2 highlight>Here are some links to help you start: </h2> <button>mixin styles</button>
 </div>
-<h2 highlight>Here are some links to help you start: </h2> <button>mixin styles</button>
-<hr/>
