@@ -3,5 +3,9 @@
 @import 'styles/_buttons';
 
 body { 
-    margin: 0; 
+    margin: 0;
+}
+
+html, body {
+    height: 100%; 
 }
