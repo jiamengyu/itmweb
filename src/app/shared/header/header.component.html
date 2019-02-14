@@ -1,4 +1,4 @@
-<div class="itm-header">
+<header class="animated fadeInDown" id="itm-header">
   <nav class="navbar" id="navbar">
     <!-- logo -->
     <div class="navbar-brand">
@@ -11,5 +11,14 @@
   <div style="text-align:center" [ngClass]="{'mat-elevation-z5' : true, 'sticky' : isSticky}">
       Welcome to {{ title }}!
   </div>
-  <h2 highlight>Here are some links to help you start: </h2> <button>mixin styles</button>
-</div>
+  <button>mixin styles</button>
+
+  <nav>
+    <a routerLink="/home" routerLinkActive="active">Home</a> 
+    <a routerLink="/contact" routerLinkActive="active">Contact</a>
+    <a routerLink="/about" routerLinkActive="active">About</a>
+    <a routerLink="/demo" routerLinkActive="active">Demo</a>
+    <a routerLink="/login" routerLinkActive="active">Login</a> 
+    <a routerLink="/product" routerLinkActive="active">Product</a> 
+  </nav>
+</header>

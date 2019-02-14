@@ -23,15 +23,15 @@ export class HomeComponent implements OnInit {
     this.myVar = 'C';
   }
 
-  /*
+  
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(e){
-    let element = document.getElementById('navbar');
+    let element = document.getElementById('itm-header');
     if (window.pageYOffset >50){
-      element.classList.add('sticky');
+      element.classList.add('itm-header');
     } else {
-      element.classList.remove('sticky');
+      element.classList.remove('itm-header');
     }
   }
-  */
+  
 }
